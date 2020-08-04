@@ -1,0 +1,525 @@
+/**********************************************************
+===========================================================
+==================MAIN CSS OF THE PAGE=====================
+==================MOBILE FIRST STYLES======================
+===========================================================
+***********************************************************/
+
+:root{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #ddd;
+    scroll-behavior: smooth;
+}
+
+
+
+/* General border radius */
+header,
+.footer,
+#search-courses {
+    /* border-radius: 10px; */
+    max-width: 100%;
+}
+
+
+
+header {
+    background-color: #292e3e;
+    height: auto;
+    position: relative;
+}
+
+/* The container that wraps all the pages */
+.container {
+    max-width: 100%;
+    margin: 0px auto;
+}
+
+
+/* The top info and the menu bars */
+nav .top-info {
+    color: #f5f5f5;
+    font-weight: bold;
+    font-size: 2rem;
+    padding: 10px;
+    
+
+}
+
+.bar {
+    clear: both;
+    float: right;
+    display: flex;
+    margin-top: -40px;
+    margin-right: 10px;
+    font-size: 2.5rem;
+    color: #f5f5f5;
+}
+
+
+nav ul {
+    display: none;
+}
+
+nav ul li {
+    list-style: none;
+    padding: 5px;
+    display: flex;
+    font-weight: 700;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #f5f5f5;
+}
+
+nav ul li a:hover {
+    border-bottom: 2px solid #f5f5f5;
+    font-size: 18px;
+    transition: .2s ease-in-out;
+    cursor: pointer;
+}
+
+
+/**********************************************************
+===========================================================
+==============INDEX HTML BODY CSS STYLES===================
+===========================================================
+***********************************************************/
+
+/* All Input */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="submit"] {
+    height: 35px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    margin: auto;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+    border: 2px solid #007bff; 
+}
+
+input[type="submit"] {
+    width: 100px;
+}
+
+/* All margin auto */
+#tutorials,
+.form-field,
+.course,
+ .about-me-info {
+    margin: auto;
+}
+
+/* Max width of 100% */
+#search-courses,
+.form-field,
+.about-me-info,
+#welcome-text,
+.course,
+.login-header {
+    max-width: 100%;
+}
+
+
+/* All background color of #f5f5 (white) */
+.about-me-info,
+.course,
+.form-container {
+    background-color: #f5f5f5;
+}
+
+
+
+/* The first section, the welcome text section */
+#welcome-text{
+    margin: -20px auto;
+    height: 300px;
+    
+    
+}
+
+.text-center,
+.help-text p{
+    text-align: center;
+    color: gold; 
+    
+}
+
+.text-center a {
+    display: block;
+    margin-top: 20px;
+    
+}
+
+button {
+    background-color: #292e3e;
+    height: 40px;
+    width: 150px;
+    border-radius: 10px;
+    color: #f5f5f5;
+    
+}
+
+
+/* All buttons in the index page */
+button:hover {
+    background-color: gold;
+    cursor: pointer;
+    transition: .3s ease-in-out;
+}
+
+
+#search-courses {
+   display: none;
+}
+
+
+/* The search form fields */
+.form-field {
+    width: auto;
+    margin: auto;
+}
+
+
+.help-text p {
+    border-bottom: 2px solid #f5f5f5;
+    
+}
+
+
+/* The tutorial section of the page */
+#tutorials {
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 95%;
+    
+    
+}
+
+.course {
+    margin: 10px;
+    
+}
+
+.course:hover {
+    border-radius: 30px;
+}
+
+
+[class="inner-text"] {
+    padding: 10px;
+}
+
+[class="inner-text"]:hover {
+    background-color: #292e3e;
+    color: #f5f5f5;
+    font-size: 17px;
+    /* cursor: pointer; */
+    transition: .3s ease-in-out;
+}
+
+
+
+
+
+
+
+/**********************************************************
+===========================================================
+====================LOGIN CSS STYLES=======================
+===========================AND=============================
+====================REGISTER CSS STYLES====================
+===========================================================
+***********************************************************/
+
+/* The form container */
+.form-container {
+    width: 80%;
+    margin: 50px auto;
+}
+
+.login-form-field {
+    max-width: 100%;
+    display: flex;
+    margin: auto;
+}
+
+
+/* The login header display */
+.login-header {
+    background-color: #292e3e;
+    text-align: center;
+    color: #f5f5f5;
+    height: 50px;
+    padding: 5px;
+}
+
+
+/* The div that contains the button and the link */
+.link {
+    text-decoration: none;
+    color: green;
+}
+
+
+/* The button for form submission */
+.submit-form-button {
+    color:#fff;
+    background-color:#007bff;
+    border-color:#007bff;
+    border-radius: 20px;
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+.submit-form-button:hover {
+    color:#fff;
+    background-color:#0069d9;
+    border-color:#0062cc;
+    cursor: pointer;
+}
+
+
+/* The form tag */
+form {
+    align-items: center;
+    align-self: center;
+    margin: 20px auto;
+}
+
+
+/* The user icon */
+
+.icon-user {
+    
+    text-align: center;
+    font-size: 50px;
+    background-color: #292e3e;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    margin: auto;
+    
+}
+
+.fa-user {
+    color: #007bff;
+    margin-top: 20px;
+    
+    
+}
+
+
+/* The input fields */ 
+.form-group {
+    margin: 10px;
+}
+
+
+
+
+
+
+
+/**********************************************************
+===========================================================
+=====================STYLES FOR THE========================
+=====================ABOUT ME PAGE=========================
+===========================================================
+***********************************************************/
+
+/* The container div for the about me page */
+.about-me-info {
+}
+
+
+/* style for the profile picture and the profile detail */
+/* With max-width: 80% and margin 20px auto */
+.profile-detail,
+.profile-info {
+    max-width: 80%;
+    margin: 20px auto;
+}
+
+.profile-image {
+    margin: 20px auto;
+    width: 150px;
+    height: 150px;
+    font-size: 50px;
+    border-radius: 50%;
+
+}
+
+img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+}
+
+/* Profile info */
+.profile-info {
+    display: flex;
+    flex-direction: column;
+
+}
+
+
+/* The profile text */
+.profile-text {
+    align-items: center;
+    align-self: center;
+    margin: auto;
+}
+
+
+
+
+
+
+
+
+
+/**********************************************************
+===========================================================
+==============FOOTOER CSS STYLES===================
+===========================================================
+***********************************************************/
+.footer {
+    background-color: #292e32;
+    margin-top: 20px;
+    height: 100px;
+}
+
+footer {
+    text-align: center;
+    color: #fff;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**********************************************************
+===========================================================
+========================MEDIA QUERIES======================
+=========================TARGET 760PX======================
+===========================================================
+***********************************************************/
+
+@media (min-width: 760px) {
+    nav ul {
+        display: flex;
+    }
+
+    nav ul li {
+        padding: 10px;
+        font-size: 1.2rem;
+    }
+
+
+    /* The Menue bar */
+    .bar {
+        display: none;
+    }
+
+
+
+
+/**********************************************************
+===========================================================
+===========INDEX MEDIA QUERY BODY CSS STYLES================
+===========================================================
+***********************************************************/
+
+/* All Input */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="submit"] {
+    height: 35px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 500px;
+}
+
+input[type="submit"] {
+    width: 200px;
+}
+
+
+button {
+    background-color: #292e3e;
+    height: 40px;
+    width: 250px;
+    border-radius: 15px;
+    
+}
+
+/* The tutorial section of the page */
+#tutorials {
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 100%;
+    
+}
+
+.course {
+    width: 48%;
+    background-color: #f5f5f5;
+    margin: 20px auto;
+    box-shadow: 0px 3px 20px;   
+}
+
+}
+
+
+
+
+
+
+
+/**********************************************************
+===========================================================
+========================MEDIA QUERIES======================
+=========================TARGET 400PX======================
+===========================================================
+***********************************************************/
+
+@media (min-width: 400px) {
+
+    #search-courses {
+        background-color: #292e3e;
+        height: 100px;
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        max-width: 100%;
+    }
+
+}

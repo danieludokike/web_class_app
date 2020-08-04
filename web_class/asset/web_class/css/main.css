@@ -1,0 +1,98 @@
+/**********************************************************
+===========================================================
+==================MAIN CSS OF THE PAGE=====================
+===========================================================
+***********************************************************/
+
+:root{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #ddd;
+}
+
+
+header {
+    background-color: #292e3e;
+    height: auto;
+    position: relative;
+}
+
+/* The container that wraps all the pages */
+.container {
+    max-width: 90%;
+    margin: 0px auto;
+}
+
+
+/* The top info and the menu bars */
+nav .top-info {
+    color: #f5f5f5;
+    font-weight: bold;
+    font-size: 2rem;
+    padding: 10px;
+    
+
+}
+
+.bar {
+    float: right;
+    display: flex;
+    margin-top: -40px;
+    margin-right: 10px;
+    font-size: 2.5rem;
+    color: #f5f5f5;
+}
+
+
+nav ul li {
+    list-style: none;
+    padding: 5px;
+    /* display: none; */
+    font-weight: 700;
+
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #f5f5f5;
+}
+
+nav ul li a:hover {
+    border-bottom: 2px solid #f5f5f5;
+    font-size: 18px;
+    transition: .3s ease-in-out;
+}
+
+
+/**********************************************************
+===========================================================
+==============INDEX HTML BODY CSS STYLES===================
+===========================================================
+***********************************************************/
+
+/* The first section, the welcome text section */
+#welcome-text {
+    height: 500px;
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**********************************************************
+===========================================================
+========================MEDIA QUERIES========================
+===========================================================
+***********************************************************/

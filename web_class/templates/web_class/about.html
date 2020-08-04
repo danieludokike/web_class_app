@@ -1,0 +1,36 @@
+{% extends 'web_class/base.html' %}
+
+{% load static %}
+
+{% block content %}
+  
+    <div class="about-me-info">
+
+        <div  class="profile-detail">
+            <!-- About me and my profile pic -->
+            <div class="login-header"><h3>About Me</h3></div>
+            <p class="profile-image"><img src="{% static 'web_class/images/dan.jpg' %}" alt="Daniel Udokike"></p>
+
+            <!-- My Profile Details -->
+
+            <div class="profile-info">
+                <div class="profile-text">
+                    <p><strong>Name:</strong>Ikegbunam Udokike Daniel</p>
+                    <p><strong>Date Of Birth:</strong>30th March, 2000</p>
+                    <p><strong>Phone:</strong>09071790126</p>
+                    <p><strong>Email:</strong>danieludokike@gmail.com</p>
+                    <p><strong>Profile:</strong>Web Developer</p>
+                    <p><strong>Address:</strong>Anambra State Nigeria</p>
+                    <a href="#"><button class="submit-form-button">HIRE ME</button></a>
+                </div>
+
+            <div style="height:5px; margin-bottom: 20px;" class="login-header"></div>
+
+            </div>
+        </div>
+
+
+
+    </div>
+
+{% endblock content %}

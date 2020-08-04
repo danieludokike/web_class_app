@@ -1,0 +1,79 @@
+{% extends 'web_class/base.html' %}
+
+{% load static %}
+
+{% block title %} Home {% endblock title %}
+
+
+{% block content %}
+
+<!-- Welcome text of the home page -->
+ <div style="background-image: url({% static 'web_class/images/bg2.jpg' %}); background-position: center; background-repear: no-repeat;" id="welcome-text">
+    <div class="text-center">
+        <h1>Welcome to My Online Learning Platform</h1>
+        <span>We are Passionate about Technology</span>
+        <a href="{% url 'web_class:login' %}"><button>GET STARTED</button></a>       
+    </div>
+ </div>
+
+ <!-- Searching set for available courses -->
+ <div id="search-courses">
+    <div class="form-field">
+        <form action="#" method="post">
+            {% csrf_token %}
+                <input  type="text" placeholder = "Enter a search"  name="seachr" id="id_search" />
+                <input  type="submit" value="Search" />
+        </form>
+    </div>
+ </div>
+
+ 
+ <!-- Tutorials section of the page -->
+ <div id="tutorials">
+     <div class="course">
+        <div class="inner-text">
+            <h3 class="center-text">HTML</h3>
+            <p class="description">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus reprehenderit ratione rerum ut quasi excepturi velit repudiandae deserunt nulla modi?
+            </p>
+            <a href="{% url 'web_class:login' %}"><button>Start Now</button></a>  
+        </div>
+     </div>
+
+     <div class="course">
+        <div class="inner-text">
+            <h3 class="center-text">CSS</h3>
+            <p class="description">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus reprehenderit ratione rerum ut quasi excepturi velit repudiandae deserunt nulla modi?
+            </p>
+            <a href="{% url 'web_class:login' %}"><button>Start Now</button></a>  
+        </div>
+    </div>
+
+    <div class="course">
+        <div class="inner-text" style="margin-top: 30px;">
+            <h3 class="center-text">JS</h3>
+            <p class="description">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus reprehenderit ratione rerum ut quasi excepturi velit repudiandae deserunt nulla modi?
+            </p>
+            <a href="{% url 'web_class:login' %}"><button>Start Now</button></a>  
+        </div> 
+    </div>
+
+    <div class="course">
+        <div class="inner-text" style="margin-top: 30px;">
+            <h3 class="center-text">PYTHON</h3>
+            <p class="description">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus reprehenderit ratione rerum ut quasi excepturi velit repudiandae deserunt nulla modi?
+            </p>
+            <a href="{% url 'web_class:login' %}"><button>Start Now</button></a>  
+        </div> 
+    </div>
+ </div>
+
+{% endblock content %}
+
+
+{% block footer %}
+    {% include 'web_class/partials/_footer.html' %}
+{% endblock footer %}
