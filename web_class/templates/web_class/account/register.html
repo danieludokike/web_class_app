@@ -8,8 +8,18 @@
  <div class="form-container">
   <div class="login-form-field">
 
-      <form action="" method="post">
+      <form action="" method="post" onsubmit="return validate_field_input()">
         <div class="login-header"><h3>User Signup</h3></div>
+
+        <!--Error Messages to be displayed here-->
+        <div id="id_error_msg">
+            <ul>
+                {% for msg in messages %}
+                    <li>{{ msg }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+
         {% csrf_token %}
           <div class="form-group">
               <label for="username">Username:</label><br>
@@ -38,3 +48,7 @@
 </div>
 
 {% endblock content %}
+
+{% block footer %}
+    {% include 'web_class/partials/_footer.html' %}
+{% endblock footer %}

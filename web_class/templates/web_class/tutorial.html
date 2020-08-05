@@ -1,0 +1,56 @@
+{% extends 'web_class/base.html' %}
+
+{% load static %}
+
+{% block title %} {{ user }} | Profile {% endblock title %}
+
+
+{% block content %}
+
+<!--The profile page -->
+  <div class="about-me-info">
+
+        <div  class="profile-detail">
+            <!-- About me and my profile pic -->
+            <div style="height: 50px;" class="login-header">
+                <strong>(  {{ user }} )</strong>
+            </div>
+                         <!-- View search result -->
+                <div id="tutorials">
+                    {% if course %}
+                        {% for field in course  %}
+                            <div class="course">
+                                <div class="inner-text">
+                                    <h3 class="center-text">{{ field.course_name }}</h3>
+                                    <div><h4>{{ field.course_title }}</h4></div>
+                                    <p class="description">
+                                        {{ field.course_description }}
+                                    </p>
+                                    <a href="#"><button>Start Now</button></a>
+                                </div>
+                            </div>
+                        {% endfor %}
+
+                        {% else %}
+
+                             <div class="course">
+                                <div class="inner-text">
+                                    <h3 class="center-text">Hmm!!</h3>
+                                    <div><h4>No result found.</h4></div>
+                                    <p class="description">
+                                        You can go back to see other available courses
+                                    </p>
+                                    <a href="{% url 'web_class:profile' %}"><button>Go Back</button></a>
+                                </div>
+                            </div>
+                    {% endif %}
+                </div>
+    </div>
+  </div>
+
+{% endblock content %}
+
+
+{% block footer %}
+    {% include 'web_class/partials/_footer.html' %}
+{% endblock footer %}

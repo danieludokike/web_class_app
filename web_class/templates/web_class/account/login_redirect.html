@@ -1,0 +1,28 @@
+{% extends "web_class/base.html" %}
+
+
+{% block title %} Login | Required {% endblock title %}
+
+
+{% block content %}
+
+    <div class="about-me-info">
+
+        <div>
+            <ul style="height: 100px; text-align: center; width: 60%; margin:  auto;">
+            {% for msg in messages %}
+                <li style="height: 100px; padding-top: 40px;" class="alert_error"> {{ msg }}</li>
+            {% endfor %}
+            </ul>
+        </div>
+
+        <div  class="profile-detail">
+            <!-- About me and my profile pic -->
+            <div style="width: auto;" class="login-header">
+                <p><strong>To Login, <a href="{% url 'web_class:login' %}">Click Here</a></strong></p>
+            </div>
+        </div>
+
+    </div>
+
+{% endblock content %}

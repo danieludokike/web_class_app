@@ -1,3 +1,13 @@
+/**********************************************************
+===========================================================
+==================MAIN JS OF ALL PAGES=====================
+===========================================================
+===========================================================
+***********************************************************/
+
+
+
+// The function for the toggle bar
 function toggle_menue_bar() {
 	var status = document.getElementById("nav_links").style.display;
 
@@ -8,3 +18,4 @@ function toggle_menue_bar() {
 		document.getElementById("nav_links").style.display = "none";
 	}
 }
+

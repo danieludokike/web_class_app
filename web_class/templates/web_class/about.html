@@ -2,6 +2,8 @@
 
 {% load static %}
 
+{% block title %} About Me {% endblock title %}
+
 {% block content %}
   
     <div class="about-me-info">
@@ -21,7 +23,7 @@
                     <p><strong>Email:</strong>danieludokike@gmail.com</p>
                     <p><strong>Profile:</strong>Web Developer</p>
                     <p><strong>Address:</strong>Anambra State Nigeria</p>
-                    <a href="#"><button class="submit-form-button">HIRE ME</button></a>
+                    <a href="{% url 'web_class:contact' %}"><button class="submit-form-button">HIRE ME</button></a>
                 </div>
 
             <div style="height:5px; margin-bottom: 20px;" class="login-header"></div>
@@ -29,8 +31,10 @@
             </div>
         </div>
 
-
-
     </div>
 
 {% endblock content %}
+
+{% block footer %}
+    {% include 'web_class/partials/_footer.html' %}
+{% endblock footer %}

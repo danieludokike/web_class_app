@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from . models import TutorialCourses
+from . models import TutorialCourses, UserContactForm
 
 
 class TutorialCoursesAdmin(admin.ModelAdmin):
@@ -12,6 +12,16 @@ class TutorialCoursesAdmin(admin.ModelAdmin):
     ]
 
 
+class UserContactFormAdmin(admin.ModelAdmin):
+    """Displays tabular form of the users"""
+    list_display = [
+        'name',
+        'email',
+        'subject',
+    ]
+
+
 # Registering Models
 admin.site.register(TutorialCourses, TutorialCoursesAdmin)
+admin.site.register(UserContactForm, UserContactFormAdmin)
 

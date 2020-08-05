@@ -1,0 +1,60 @@
+{% extends 'web_class/base.html' %}
+
+{% load static %}
+
+{% block title %} User | Login {% endblock title %}
+
+
+{% block content %}
+
+    <div class="form-container">
+
+      <div class="login-form-field">
+        <form action="" method="post">
+
+
+          <div class="login-header"><h3>Contact Me</h3></div>
+            <p style="margin-bottom: -30px;" class="profile-image"><img src="{% static 'web_class/images/dan.jpg' %}" alt="Daniel Udokike"></p>
+
+          <!-- Error message display -->
+          <div style="margin-top: 20px;" id="id_error_msg">
+            <ul>
+                {% for msg in messages %}
+                    <li>{{ msg }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+
+          {% csrf_token %}
+            <div class="form-group">
+              <label for="name">Name:</label><br>
+              {{ form.name }}
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email:</label><br>
+              {{ form.email }}
+            </div>
+
+            <div class="form-group">
+              <label for="subject">Subject:</label><br>
+              {{ form.subject }}
+            </div>
+
+            <div class="form-group">
+              <label for="text">Leave a Message:</label><br>
+              {{ form.text }}
+            </div>
+
+            <input style="margin: auto;" class="submit-form-button" type="submit" value="Submit">
+
+        </form>
+      </div>
+    </div>
+
+
+{% endblock content %}
+
+{% block footer %}
+    {% include 'web_class/partials/_footer.html' %}
+{% endblock footer %}

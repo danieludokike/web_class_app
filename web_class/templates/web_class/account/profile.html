@@ -1,10 +1,50 @@
 {% extends 'web_class/base.html' %}
 
-{% block title %} Profile | {{ request.user }} {% endblock title %}
+{% load static %}
+
+{% block title %} {{ user }} | Profile {% endblock title %}
 
 
 {% block content %}
 
-<h1>Welcome to the User Profile Page</h1>
+<!--The profile page -->
+  <div class="about-me-info">
+
+        <div  class="profile-detail">
+            <!-- About me and my profile pic -->
+            <div style="height: 20px;" class="login-header">
+                <strong>Welcome, {{ user }}</strong>
+            </div>
+
+             <div id="search-courses">
+                <div class="form-field">
+                    <form action="{% url 'web_class:tutorial-search' %}" method="post">
+                        {% csrf_token %}
+                            <input  type="text" placeholder = "Search for courses"  name="search" id="id_search" required="" />
+                            <input style="width: 100px;"  type="submit" value="Search" />
+                    </form>
+                </div>
+            </div>
+
+    <!-- Tutorials section of the page -->
+    <div id="tutorials">
+        {% for course in available_courses %}
+            <div class="course">
+                <div class="inner-text">
+                    <h3 class="center-text">{{ course.course_name }}</h3>
+                    <div><h4>{{ course.course_title }}</h4></div>
+                    <p class="description">
+                        {{ course.course_description }}
+                    </p>
+                    <a href="{% url 'web_class:login_required' %}"><button>Start Now</button></a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
 
 {% endblock content %}
+
+
+{% block footer %}
+    {% include 'web_class/partials/_footer.html' %}
+{% endblock footer %}

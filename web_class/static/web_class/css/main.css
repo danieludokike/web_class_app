@@ -99,7 +99,8 @@ input[type="submit"] {
 
 input[type="text"],
 input[type="email"],
-input[type="password"] {
+input[type="password"],
+.text-field {
     width: 100%;
     margin: auto;
 }
@@ -181,10 +182,6 @@ button:hover {
 }
 
 
-#search-courses {
-   display: none;
-}
-
 
 /* The search form fields */
 .form-field {
@@ -257,6 +254,14 @@ button:hover {
     margin: auto;
 }
 
+#id_error_msg {
+    text-align: center;
+    color: red;
+    padding: 10px;
+    width: 50%;
+    margin: auto;
+}
+
 
 /* The login header display */
 .login-header {
@@ -325,7 +330,7 @@ form {
 
 /* The input fields */ 
 .form-group {
-    margin: 10px;
+    margin: 20px;
 }
 
 
@@ -340,10 +345,6 @@ form {
 =====================ABOUT ME PAGE=========================
 ===========================================================
 ***********************************************************/
-
-/* The container div for the about me page */
-.about-me-info {
-}
 
 
 /* style for the profile picture and the profile detail */
@@ -383,6 +384,17 @@ img {
     align-self: center;
     margin: auto;
 }
+
+
+/* The login required alert error if the user tries to access the course without logging */
+.alert_error {
+    color:#155724;
+    background-color:#d4edda;
+    border-color:#c3e6cb
+}
+
+
+/* LOGIN PAGE ERROR DISPLAY */
 
 
 
