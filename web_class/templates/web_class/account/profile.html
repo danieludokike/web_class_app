@@ -13,21 +13,30 @@
         <div  class="profile-detail">
             <!-- About me and my profile pic -->
             <div style="height: 20px;" class="login-header">
-                <strong>Welcome, {{ user }}</strong>
+                <strong>Take a Tutorial </strong>
             </div>
 
              <div id="search-courses">
                 <div class="form-field">
                     <form action="{% url 'web_class:tutorial-search' %}" method="post">
                         {% csrf_token %}
-                            <input  type="text" placeholder = "Search for courses"  name="search" id="id_search" required="" />
-                            <input style="width: 100px;"  type="submit" value="Search" />
+                            <input class="search"  type="text" placeholder = "Search for courses"  name="search" id="id_search" />
+                            <input class="go-btn"  type="submit" value="Search" />
                     </form>
                 </div>
             </div>
 
+            <!-- Field search Error display -->
+            <div>
+                <ul style=" text-align: center; width: 60%; margin:  auto;">
+                {% for msg in messages %}
+                    <li style="height: 100px; padding-top: 40px;" class="field-search-err"> {{ msg }}</li>
+                {% endfor %}
+                </ul>
+            </div>
+
     <!-- Tutorials section of the page -->
-    <div id="tutorials">
+    <div style="background-color: #ddd;" id="tutorials">
         {% for course in available_courses %}
             <div class="course">
                 <div class="inner-text">

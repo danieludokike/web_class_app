@@ -22,4 +22,5 @@ urlpatterns = [
 
     # Default Routing
     path('admin/', admin.site.urls),
+    path('account/', include('django.contrib.auth.urls')),
 ]

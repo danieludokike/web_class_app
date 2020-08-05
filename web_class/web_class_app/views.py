@@ -28,7 +28,7 @@ def home_page_view(request):
         return redirect('web_class:profile')
 
     else:
-        query_set = TutorialCourses.objects.all()
+        query_set = TutorialCourses.objects.all()[:4]
         template = 'web_class/index.html'
 
         context = {
@@ -40,21 +40,26 @@ def home_page_view(request):
 def about_web_class_page_view(request):
     """Renders the about web_class page"""
 
-    template = 'web_class/about.html'
+    # Checking if User is logged in
+    if request.user.is_authenticated:
+        return redirect('web_class:profile')
 
-    context = {
+    else:
+        template = 'web_class/about.html'
 
-    }
-    return render(request, template, context)
+        context = {
+
+        }
+        return render(request, template, context)
 
 
 # CONTACT PAGE
 def contact_page_view(request):
     """Renders the contact page view on request"""
     if request.method == 'POST':
-        name = request.POST['name']
+        name = request.POST['name'].title()
         email = request.POST['email']
-        subject = request.POST['subject']
+        subject = request.POST['subject'].title()
         text = request.POST['text']
 
         if text == '' or email == '' or subject == '':
@@ -103,6 +108,14 @@ def registration_page_view(request):
             password2 = request.POST['password2']
 
             # Field validation
+            if username.isupper():
+                messages.info(request, "Signup Error: Username must be in all lowercase.")
+                return redirect("web_class:register")
+
+            if email.isupper():
+                messages.info(request, "Signup Error: Email must be in all lowercase.")
+                return redirect("web_class:register")
+
             if username == '' or email == '' or password == '' or password2 == '':
                 messages.info(request, "Signup Error: Please fill out all fields.")
                 return redirect("web_class:register")
@@ -133,13 +146,13 @@ def registration_page_view(request):
                 return redirect("web_class:register")
 
             user = User.objects.create_user(
-                username=username,
+                username=username.upper(),
                 email=email,
                 password=password
             )
             user.save()
 
-            alert_msg = "Hello " + username + "!! Your account creation was successful. Proceed to login"
+            alert_msg = "Hello " + username.title() + "!! Your account creation was successful. Proceed to login"
             messages.add_message(request, messages.INFO, alert_msg)
             return redirect('web_class:login_required')
 
@@ -168,6 +181,13 @@ def login_page_view(request):
             username = request.POST['username']
             password = request.POST['password']
 
+            # Validating Username
+            if username.isupper():
+                messages.info(request, "Authentication Error: Invalid Username or Password.Note: fields may be "
+                                       "case sensitive")
+                return redirect("web_class:login")
+
+            username = username.upper()
             user = authenticate(
                 username=username,
                 password=password,
@@ -178,7 +198,8 @@ def login_page_view(request):
                 login(request, user)
                 return redirect('web_class:profile')
             else:
-                messages.info(request, "Authentication Error: Invalid Username or Password.")
+                messages.info(request, "Authentication Error: Invalid Username or Password. Note: both fields may be "
+                                       "case sensitive")
                 return redirect("web_class:login")
 
         else:
@@ -200,7 +221,7 @@ def logout_view(request):
 @login_required(login_url='web_class:login_required')
 def user_profile_page_view(request):
     """Renders the User Profile Page"""
-    query_set = TutorialCourses.objects.all()
+    query_set = TutorialCourses.objects.all()[:4]
     template = 'web_class/account/profile.html'
 
     context = {
@@ -231,6 +252,12 @@ def search_result_page_view(request):
     """Renders and shows the search result"""
     if request.method == 'POST':
         course_name = request.POST['search']
+
+        # Checking if field is empty
+        if course_name == '':
+            messages.info(request, 'Please enter something in the search field')
+            return redirect('web_class:profile')
+
         course_name = course_name.upper()
         get_course = TutorialCourses.objects.filter(course_name=course_name)
         template = 'web_class/tutorial.html'
@@ -246,3 +273,4 @@ def search_result_page_view(request):
 
         }
         return render(request, template, context)
+

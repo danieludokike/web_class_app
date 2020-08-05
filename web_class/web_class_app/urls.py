@@ -1,6 +1,10 @@
+from django.contrib.auth.views import (
+    PasswordResetView,
+)
+
 from django.urls import path
 
-from . views import (
+from .views import (
     user_profile_page_view,
     registration_page_view,
     login_page_view,
@@ -11,9 +15,7 @@ from . views import (
     contact_page_view,
     search_result_page_view,
 
-
 )
-
 
 app_name = 'web_class'
 urlpatterns = [
@@ -22,6 +24,8 @@ urlpatterns = [
     path('contact/', contact_page_view, name='contact'),
     path('account/register/', registration_page_view, name='register'),
     path('account/login/', login_page_view, name='login'),
+    path('account/password/reset', PasswordResetView.as_view(template_name='web_class/account/reset-password.html'),
+         name='reset-password'),
     path('account/user/logout/', logout_view, name='logout'),
     path('account/login/required/', login_required_redirection_view, name='login_required'),
     path('account/user/profile/', user_profile_page_view, name='profile'),

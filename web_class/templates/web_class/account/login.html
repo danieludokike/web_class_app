@@ -32,8 +32,11 @@
               <label for="username">Username:</label><br>
               {{ form.password }}
             </div>
-            <p>Don't have an account? <a class="link" href="{% url 'web_class:register' %}">Click here!</a></p>
+            <br>
             <input class="submit-form-button" type="submit" value="Submit">
+            <p><a class="link" href="{% url 'web_class:register' %}">Don't have an account?</a></p>
+            <p><a class="link" href="{% url 'web_class:reset-password' %}">Forgot Password?</a></p>
+
      
         </form>
       </div>

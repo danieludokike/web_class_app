@@ -13,7 +13,7 @@
         <div  class="profile-detail">
             <!-- About me and my profile pic -->
             <div style="height: 50px;" class="login-header">
-                <strong>(  {{ user }} )</strong>
+                <strong>Search Result:</strong>
             </div>
                          <!-- View search result -->
                 <div id="tutorials">
@@ -34,11 +34,11 @@
                         {% else %}
 
                              <div class="course">
-                                <div class="inner-text">
+                                <div style="color: red;" class="inner-text">
                                     <h3 class="center-text">Hmm!!</h3>
                                     <div><h4>No result found.</h4></div>
                                     <p class="description">
-                                        You can go back to see other available courses
+                                        You can go back to select available courses
                                     </p>
                                     <a href="{% url 'web_class:profile' %}"><button>Go Back</button></a>
                                 </div>

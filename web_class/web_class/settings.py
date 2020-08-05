@@ -41,6 +41,10 @@ INSTALLED_APPS = [
     'web_class_app.apps.WebClassAppConfig',
 ]
 
+# EMAIL CONFIGURATION
+# EMAIL_BACKED = 'django.core.mail.backends.console.EmailBackend'
+
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',

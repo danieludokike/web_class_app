@@ -33,7 +33,7 @@ header {
 
 /* The container that wraps all the pages */
 .container {
-    max-width: 100%;
+    max-width: 250px;
     margin: 0px auto;
 }
 
@@ -83,6 +83,18 @@ nav ul li a:hover {
 }
 
 
+/* THE PROFILE SEARCH FIELD ERROR */
+.field-search-err{
+    color:#856404;
+    background-color:#fff3cd;
+    border-color:#ffeeba;
+
+}
+
+
+
+
+
 /**********************************************************
 ===========================================================
 ==============INDEX HTML BODY CSS STYLES===================
@@ -107,7 +119,8 @@ input[type="password"],
 
 input[type="text"]:focus,
 input[type="email"]:focus,
-input[type="password"]:focus {
+input[type="password"]:focus
+.search:focus {
     border: 2px solid #007bff; 
 }
 
@@ -412,7 +425,7 @@ img {
 .footer {
     background-color: #292e32;
     margin-top: 20px;
-    height: 100px;
+    height: auto;
 }
 
 footer {
@@ -441,6 +454,14 @@ footer {
 ***********************************************************/
 
 @media (min-width: 760px) {
+
+    /* The container that wraps all the pages */
+    .container {
+        max-width: 100%;
+        margin: 0px auto;
+    }
+
+
     nav ul {
         display: flex;
     }
@@ -523,7 +544,43 @@ button {
 ===========================================================
 ***********************************************************/
 
-@media (min-width: 400px) {
+@media (min-width: 460px) {
+
+    /* The container that wraps all the pages */
+    .container {
+        max-width: 100%;
+        margin: 0px auto;
+    }
+
+
+    #search-courses {
+        background-color: #292e3e;
+        height: 100px;
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        max-width: 100%;
+    }
+
+
+
+
+
+/**********************************************************
+===========================================================
+========================MEDIA QUERIES======================
+=========================TARGET 200PX======================
+===========================================================
+***********************************************************/
+
+@media (min-width: 200px) {
+
+    /* The container that wraps all the pages */
+    .container {
+        max-width: 100%;
+        margin: 0px auto;
+    }
+
 
     #search-courses {
         background-color: #292e3e;
