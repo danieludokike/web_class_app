@@ -30,7 +30,7 @@
             <div>
                 <ul style=" text-align: center; width: 60%; margin:  auto;">
                 {% for msg in messages %}
-                    <li style="height: 100px; padding-top: 40px;" class="field-search-err"> {{ msg }}</li>
+                    <li style="height: 100px; padding-top: 40px; color: red;" class="field-search-err"> {{ msg }}</li>
                 {% endfor %}
                 </ul>
             </div>
@@ -45,11 +45,13 @@
                     <p class="description">
                         {{ course.course_description }}
                     </p>
-                    <a href="{% url 'web_class:login_required' %}"><button>Start Now</button></a>
+                    <a href="{% url 'web_class:course_details' course.course_name %}"><button>Start Now</button></a>
                 </div>
             </div>
         {% endfor %}
     </div>
+        </div>
+  </div>
 
 {% endblock content %}
 

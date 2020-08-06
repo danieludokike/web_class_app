@@ -13,15 +13,23 @@
             <div class="login-header"><h3>About Me</h3></div>
             <p class="profile-image"><img src="{% static 'web_class/images/dan.jpg' %}" alt="Daniel Udokike"></p>
 
+            <ul style="text-align: center;">
+                <li>Making it Simple......</li>
+                <li>Making it Accessible</li>
+                <li>Making it Fancy........</li>
+                <li>Making sure the Fancy doesn't brake the Accessibility</li>
+            </ul>
+            <hr>
+
             <!-- My Profile Details -->
 
             <div class="profile-info">
                 <div class="profile-text">
                     <p><strong>Name:</strong>Daniel Udokike</p>
                     <p><strong>Date Of Birth:</strong>30th March, 2000</p>
-                    <p><strong>Phone:</strong><a href="tel://1234567920">+2349071790126</a></p>
-                    <p><strong>Email:</strong><a href="mailto:danieludokike@gmail.com">danieludokike@gmail.com</a></p>
-                    <p><strong>Web Site: </strong><a href="#">danieludokik.com</a></p>
+                    <p><strong>Phone:</strong><a style="color: green; text-decoration: none;" href="tel://1234567920">+2349071790126</a></p>
+                    <p><strong>Email:</strong><a style="color: green; text-decoration: none;" href="mailto:danieludokike@gmail.com">danieludokike@gmail.com</a></p>
+                    <p><strong>Web Site: </strong><a style="color: green; text-decoration: none;" href="#">danieludokik.com</a></p>
                     <p><strong>Profile:</strong>Web Developer</p>
                     <p><strong>Address:</strong>Anambra State Nigeria</p>
                     <a href="{% url 'web_class:contact' %}"><button class="submit-form-button">HIRE ME</button></a>

@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from . models import TutorialCourses, UserContactForm
+from . models import TutorialCourses, UserContactForm, CourseDetails
 
 
 class TutorialCoursesAdmin(admin.ModelAdmin):
@@ -22,6 +22,6 @@ class UserContactFormAdmin(admin.ModelAdmin):
 
 
 # Registering Models
+admin.site.register(CourseDetails)
 admin.site.register(TutorialCourses, TutorialCoursesAdmin)
 admin.site.register(UserContactForm, UserContactFormAdmin)
-

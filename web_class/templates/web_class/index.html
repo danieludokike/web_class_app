@@ -8,9 +8,9 @@
 {% block content %}
 
 <!-- Welcome text of the home page -->
- <div style="background-image: url({% static 'web_class/images/bg2.jpg' %}); background-position: center; background-repear: no-repeat;" id="welcome-text">
-    <div class="text-center">
-        <h1>Welcome to My Online Learning Platform</h1>
+ <div style="background-image: url({% static 'web_class/images/welc-bg.jpg' %}); " id="welcome-text">
+    <div  class="text-center">
+        <h1>Welcome to Code Class Learning Platform</h1>
         <span>We are Passionate about Technology</span>
         <a href="{% url 'web_class:login' %}"><button>GET STARTED</button></a>
     </div>
@@ -21,7 +21,7 @@
      {% for course in available_courses %}
          <div class="course">
             <div class="inner-text">
-                <h3 class="center-text">{{ course.course_name }}</h3>
+                <h3 class="center-text">{{ course.course_name }}</h3><hr />
                 <div><h4>{{ course.course_title }}</h4></div>
                 <p class="description">
                     {{ course.course_description }}

@@ -8,10 +8,8 @@
         </div>
 
         <ul id="nav_links">
-            <li><a href="{% url 'web_class:profile' %}">Welcome, {{ request.user }}</a></li>
-            <li><a href="{% url 'web_class:profile' %}">|</a></li>
+            <li><a href="{% url 'web_class:profile' %}">Welcome, {{ request.user }} .</a></li>
             <li><a href="{% url 'web_class:profile' %}">Profile</a></li>
-            <li><a href="{% url 'web_class:profile' %}">|</a></li>
             <li><a href="{% url 'web_class:logout' %}">Logout</a></li>
         </ul>
 

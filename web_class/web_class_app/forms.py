@@ -22,7 +22,6 @@ class BaseForm(forms.Form):
             }
         )
     )
-
     abstract = True
 
 

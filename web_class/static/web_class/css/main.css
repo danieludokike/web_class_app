@@ -33,7 +33,7 @@ header {
 
 /* The container that wraps all the pages */
 .container {
-    max-width: 250px;
+    width: 100%;
     margin: 0px auto;
 }
 
@@ -105,15 +105,18 @@ nav ul li a:hover {
 input[type="text"],
 input[type="email"],
 input[type="password"],
-input[type="submit"] {
+input[type="submit"],
+.search,
+.go-btn {
     height: 35px;
 }
 
 input[type="text"],
 input[type="email"],
 input[type="password"],
-.text-field {
-    width: 100%;
+.text-field,
+. search {
+    max-width: 5rem;
     margin: auto;
 }
 
@@ -164,10 +167,12 @@ input[type="submit"] {
     
 }
 
-.text-center,
-.help-text p{
+.text-center {
     text-align: center;
-    color: gold; 
+    color: orange;
+    padding: 10px;
+    height: fit-content;
+
     
 }
 
@@ -436,6 +441,31 @@ footer {
 
 
 
+/* SETTING THE HOVER EFFECT OF THE TUTORIAL PAGE TO DEFAULT */
+#tutorials-course {
+    max-width: 60%;
+    background-color: #ddd;
+    margin: auto;
+}
+
+.course-section {
+    background-color: #fff;
+    width: 100%;
+    height: auto;
+}
+
+.course-text {
+    width: 100%;
+    margin-top: 20px;
+
+}
+
+/* ALL THE TEXT AREA */
+textarea {
+    width: 100%;
+}
+
+
 
 
 
@@ -490,13 +520,16 @@ footer {
 input[type="text"],
 input[type="email"],
 input[type="password"],
-input[type="submit"] {
+input[type="submit"],
+.search,
+.go-btn {
     height: 35px;
 }
 
 input[type="text"],
 input[type="email"],
-input[type="password"] {
+input[type="password"],
+.search {
     width: 500px;
 }
 

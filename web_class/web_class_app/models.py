@@ -14,6 +14,16 @@ class TutorialCourses(models.Model):
         return self.course_name
 
 
+class CourseDetails(models.Model):
+    """Provides the detail and learning platform for each course"""
+    title = models.CharField(max_length=200)
+    course_details = models.TextField()
+
+    def __str__(self):
+        """Returns the id of each course details"""
+        return self.title
+
+
 # CONTACT FORM
 class UserContactForm(models.Model):
     """Contact Me Form"""

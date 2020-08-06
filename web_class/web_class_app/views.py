@@ -14,7 +14,7 @@ from .forms import (
     ContactMeForm,
 )
 
-from .models import TutorialCourses, UserContactForm
+from .models import TutorialCourses, UserContactForm, CourseDetails
 
 import re  # Regular expression module
 
@@ -273,4 +273,18 @@ def search_result_page_view(request):
 
         }
         return render(request, template, context)
+
+
+# Displays the tutorial text to the user
+def tutorial_page_view(request, course_name):
+    """Renders the tutorial page for the user"""
+
+    course = get_object_or_404(CourseDetails, title=course_name)
+    template = 'web_class/account/tutorial_display.html'
+
+    context = {
+        'course': course,
+    }
+    return render(request, template, context)
+
 
