@@ -36,8 +36,8 @@
                              <div class="course">
                                 <div style="color: red;" class="inner-text">
                                     <h3 class="center-text">Hmm!!</h3>
-                                    <div><h4>No result found.</h4></div>
-                                    <p class="description">
+                                    <div><h4>No result found for {{ course_name }}.</h4></div>
+                                    <p style="color: green;" class="description">
                                         You can go back to select available courses
                                     </p>
                                     <a href="{% url 'web_class:profile' %}"><button>Go Back</button></a>

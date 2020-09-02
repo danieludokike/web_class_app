@@ -214,7 +214,8 @@ def login_page_view(request):
 def logout_view(request):
     """Logs the User out"""
     logout(request)
-    return redirect('web_class:login')
+    messages.add_message(request, messages.INFO, 'Thanks for taking courses in our platform!!')
+    return redirect('web_class:login_required')
 
 
 # User Profile Page
@@ -262,7 +263,8 @@ def search_result_page_view(request):
         get_course = TutorialCourses.objects.filter(course_name=course_name)
         template = 'web_class/tutorial.html'
         context = {
-            'course': get_course
+            'course': get_course,
+            'course_name': course_name.title(),
         }
         return render(request, template, context)
 
@@ -286,5 +288,6 @@ def tutorial_page_view(request, course_name):
         'course': course,
     }
     return render(request, template, context)
+
 
 
