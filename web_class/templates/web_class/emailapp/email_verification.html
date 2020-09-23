@@ -1,0 +1,14 @@
+{% extends 'web_class/base.html' %}
+
+{% load static %}
+
+{% block title %} Home {% endblock title %}
+
+
+{% block content %}
+<form action="{% url 'email:render_form' %}" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Verify">
+</form>
+{% endblock content %}

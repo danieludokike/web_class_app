@@ -22,9 +22,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '&rl!5p&r=heigftgx9nb)#a*avszie$_e9o!69$)_%+j)zi2ny'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['danieludokike.herokuapp.com', '127.0.0.1l']
 
 # Application definition
 
@@ -39,6 +39,7 @@ INSTALLED_APPS = [
 
     # Configured Apps
     'web_class_app.apps.WebClassAppConfig',
+    'emailapp.apps.EmailappConfig',
 ]
 
 # EMAIL CONFIGURATION
@@ -121,6 +122,15 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static')
+    os.path.join(BASE_DIR, 'static'),
 ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'asset')
+
+
+# Email Settings and configuration
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'webemailsender523@gmail.com'
+EMAIL_HOST_PASSWORD = 'commandcodeverification'
+EMAIL_USE_TLS = True
+# EMAIL_USE_SSL = False

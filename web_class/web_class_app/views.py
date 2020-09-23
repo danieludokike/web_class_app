@@ -1,5 +1,6 @@
 from django.contrib.auth import authenticate, logout, login
 from django.contrib.auth.decorators import login_required
+from django.core.mail import send_mail
 from django.shortcuts import (
     render,
     redirect, get_object_or_404,
@@ -62,7 +63,7 @@ def contact_page_view(request):
         subject = request.POST['subject'].title()
         text = request.POST['text']
 
-        if text == '' or email == '' or subject == '':
+        if name == '' or text == '' or email == '' or subject == '':
 
             messages.info(request, 'Please fill out all fields')
             return redirect('web_class:contact')
@@ -101,7 +102,6 @@ def registration_page_view(request):
 
         form = RegistrationForm()
         if request.method == 'POST':
-            form = RegistrationForm(request.POST)
             username = request.POST['username']
             email = request.POST['email']
             password = request.POST['password']
@@ -138,7 +138,7 @@ def registration_page_view(request):
 
             # Password validation
             if password != password2:
-                messages.info(request, "Signup Error: Passwords do not match already taken.")
+                messages.info(request, "Signup Error: Passwords do not match!!.")
                 return redirect("web_class:register")
 
             if len(password) < 8:
