@@ -8,7 +8,7 @@ blinker==1.4
 certifi==2020.6.20
 cffi==1.14.0
 click==7.1.2
-cryptography==2.9.2
+cryptography==3.2
 css==0.1
 distlib==0.3.1
 Django==3.0.8
