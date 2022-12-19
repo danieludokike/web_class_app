@@ -45,7 +45,7 @@ mysql-connector-python==8.0.20
 mysqlclient==1.4.6
 paramiko==2.7.1
 passlib==1.7.2
-pgadmin4==4.22
+pgadmin4==6.17
 Pillow==7.1.2
 pipenv==2020.6.2
 protobuf==3.12.2
